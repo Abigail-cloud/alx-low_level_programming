@@ -1,15 +1,11 @@
 #include <stdio.h>
-
 /**
- * main -entry point
- *
- * Return: 0number
- */
-
+ * * main - entry point
+ * *
+ * * Return: 0 number
+ * */
 int main(void)
-
 {
-		char Mystr[] = "\"Programming is like building a multilingual puzzle\n";
-		puts(Mystr);
-		return (0);
+		puts("\"Programming is like building a multilingual puzzle");
+			return (0);
 }
