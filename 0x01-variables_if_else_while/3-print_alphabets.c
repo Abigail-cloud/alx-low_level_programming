@@ -6,13 +6,14 @@
  */
 int main(void)
 {
-		char c;
+		char low;
+		char UP;
 
-		for (c = 'a'; c <= 'z'; ++c)
-		{
-			if (c != 'e' && c != 'q')
-			{													putchar(c);												}
-		}
+		for (low = 'a'; low <= 'z'; ++low)
+			printf("%c", low);
+
+		for (UP = 'A'; UP <= 'Z'; ++UP)
+			printf("%c", UP);
 
 		printf("\n");
 
