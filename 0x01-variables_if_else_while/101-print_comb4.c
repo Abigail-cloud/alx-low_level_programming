@@ -1,43 +1,41 @@
 #include <stdio.h>
+
 /**
- * main - entry point
- *
- * Return: exixt function
+ * main - prints out all possible combos of 3 digits
+ * Return: 0
  */
 int main(void)
 {
-		int a = 0;
-		int b = 0;
-		int c = 0;
-		int coma = 1;
 
-		while (a <= 9)
+	int i, j, k;
+
+	for (i = 48; i < 58; i++)
+	{
+		for (j = i; j < 58; j++)
 		{
-			while (b <= 9)
+			for (k = j; k < 58; k++)
 			{
-				while (c <= 9)
+				if (i == j || j == k || i == k)
 				{
-					if (a < b && b < c)
-					{
-						if (coma == 0)
-						{
-							putchar(',');
-							putchar(32);
-						}
-						coma = 0;
-						putchar(a + '0');
-						putchar(b + '0');
-						putchar(c + '0');
-					}
-					++c;
+					continue;
 				}
-				++b;
-				c = 0;
-			}
-			++a;
-			b = 0;
-		}
-		putchar(10);
+				putchar(i);
+				putchar(j);
+				putchar(k);
 
-		return (0);
+				if (i == 55 && j == 56 && k == 57)
+				{
+					break;
+				}
+				else
+				{
+					putchar(',');
+					putchar(' ');
+				}
+
+			}
+		}
+	}
+	putchar('\n');
+	return (0);
 }
