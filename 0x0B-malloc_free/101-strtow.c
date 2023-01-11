@@ -60,3 +60,24 @@ char **strtow(char *str)
 		}
 		if (!wordCount)
 			return (NULL);
+
+		return (strArr);
+
+		xif(str[wordCount] != ' ' && !letter)
+		{
+			strArr[counter] = first_word(str + counter);
+			if (!strArr[counter])
+			{
+				wordCount--;
+				while (wordCount >= 0)
+					free(*(strArr + wordCount--));
+				free(strArr);
+				return (NULL);
+			}
+			wordCount++;
+			letter = 1;
+		}
+		else if (str[counter] == ' ' && letter)
+			letter = 0;
+		counter++
+}
