@@ -1,57 +1,65 @@
-#include "dog.h"
 #include <stdlib.h>
-
-int _strlen(char *str);
-char *_strcopy(char *dest, char *src);
-dog_t *new_dog(char *name, float age, char *owner);
+#include "dog.h"
 
 /**
- * _str - function to get the length of astring.
- * @str: The strings to be measured.
+ * _strlen - returns the length of a string
+ * @s: string to evaluate
  *
- * Return: The length of the string.
+ * Return: the length of the string
  */
-int _strlen(char *str)
+int _strlen(char *s)
 {
-	int len = 0;
+	int i;
 
-	while (*str++)
-		len++;
+	i = 0;
 
-	return (len);
+	while (s[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
 }
 
 /**
- * _strcopy -a function that copies a string pointed to by src, including the
- * the terminating null byte, to a buffer pointed to by dest.
- * @dest: The buffer for storing the string copy
- * @src: The soucrce code.
+ * *_strcpy - copies the string pointed to by src.
+ * including the terminating null byte (\0)
+ * to the buffer pointed to by dest
+ * @dest: pointer to the buffer in which we copy the string
+ * @src: string to be copied
  *
- * Return: The to dest.
+ * Return: the pointer to the dest
  */
-char *_strcopy(char *dest, char *src)
+char *_strcpy(char *dest, char *src)
 {
-	int i = 0;
+	int len, i;
 
-	for (i = 0; src[i]; i++)
+	len = 0;
+
+	while (src[len] != '\0')
+	{
+		len++;
+	}
+
+	for (i = 0; i < len; i++)
+	{
 		dest[i] = src[i];
-
+	}
 	dest[i] = '\0';
 
 	return (dest);
 }
+
 /**
- * new_dog - a function that creates a new dog.
- * @name: elemnent name of dog.
- * @age: element age of dog.
- * @owner: element owner of the dog.
+ * new_dog -creates a new dog
+ * @name: name of the dog element
+ * @age: age of the dog element
+ * @owner: owner of the dog elemnet
  *
- * Return: The new struct dog.
+ * Return: pointer to the new dog : Sucess, Null if failure.
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *dog;
-
 	int len1, len2;
 
 	len1 = _strlen(name);
