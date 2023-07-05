@@ -1,22 +1,21 @@
 #include "lists.h"
 
 /**
- * get_nodeint_at_index - returns the node at a certain index
+ * sum_listint - calculates the sum of all the data
  * @head: first node
- * @index: index of the node
  *
- * Return: pointer to the node
+ * Return: sum result
  */
-listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
+int sum_listint(listint_t *head)
 {
-	unsigned int i = 0;
+	int sum = 0;
 	listint_t *tmp = head;
 
-	while (tmp && i < index)
+	while (tmp)
 	{
+		sum += tmp->n;
 		tmp = tmp->next;
-		i++;
 	}
 
-	return (tmp ? tmp : NULL);
+	return (sum);
 }
